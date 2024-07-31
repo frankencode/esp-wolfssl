@@ -335,7 +335,7 @@
 
 #if defined(HAVE_PKCS7)
     /* HAVE_PKCS7 may enable HAVE_PBKDF2 see settings.h */
-    #define NO_PBKDF2
+    // #define NO_PBKDF2
 
     #define HAVE_AES_KEYWRAP
     #define HAVE_X963_KDF
@@ -367,8 +367,8 @@
 /* date/time                               */
 /* if it cannot adjust time in the device, */
 /* enable macro below                      */
-/* #define NO_ASN_TIME */
-/* #define XTIME time */
+#define NO_ASN_TIME
+// #define XTIME time
 
 
 /* adjust wait-timeout count if you see timeout in RSA HW acceleration */
@@ -856,7 +856,26 @@ Turn on timer debugging (used when CPU cycles not available)
     #define ASN_BER_TO_DER
 #endif
 
-/* Only requires the peer certificate to validate to a trusted certificate.
- * If peer sends additional certificates not in the chain they are allowed,
- * but not trusted */
-// #define WOLFSSL_ALT_CERT_CHAINS
+/** Only requires the peer certificate to validate to a trusted certificate.
+  * If peer sends additional certificates not in the chain they are allowed,
+  * but not trusted
+  */
+#define WOLFSSL_ALT_CERT_CHAINS
+
+/** Use smaller version of the certificate checking code
+  */
+#define WOLFSSL_SMALL_CERT_VERIFY
+
+/** Enable Base-64 encoding
+  */
+#define WOLFSSL_BASE64_ENCODE
+
+/** Disable troublesome SHA acceleration
+  */
+#define NO_WOLFSSL_ESP32_CRYPT_HASH
+
+/** Compile-fix
+  */
+#if !defined(SINGLE_THREADED)
+    #include <pthread.h>
+#endif

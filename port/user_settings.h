@@ -842,6 +842,8 @@ Turn on timer debugging (used when CPU cycles not available)
 #ifdef CONFIG_WOLFSSL_HAVE_OCSP
     #define HAVE_OCSP
     #define HAVE_CERTIFICATE_STATUS_REQUEST
+    #include <sys/socket.h>
+    #include <netdb.h>
 #endif
 
 /** Enable PKCS7 certificate parser with BER support

@@ -15,7 +15,7 @@ This repository now uses upstream wolfSSL GitHub pointer as submodule and can st
 
 # Requirements
 - ESP_IDF
- - To run the examples user must have installed ESP-IDF version v4.1 (minimum supported) from https://github.com/espressif/esp-idf.git
+ - To run the examples user must have installed ESP-IDF version v5.3 (minimum supported) from https://github.com/espressif/esp-idf.git
  - The IDF_PATH should be set as an environment variable
 
 # Getting Started
@@ -71,4 +71,3 @@ In general, these are links which will be useful for using both wolfSSL, as well
 - wolfSSL Manual [https://www.wolfssl.com/docs/wolfssl-manual/]()
 - wolfSSL GitHub
  [https://github.com/wolfssl/wolfssl]()
-

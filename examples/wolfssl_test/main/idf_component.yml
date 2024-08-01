@@ -1,0 +1,5 @@
+dependencies:
+  esp-wolfssl:
+    override_path: '../../../'
+  idf:
+    version: ">=5.3.0"

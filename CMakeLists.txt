@@ -135,6 +135,9 @@ idf_component_register(
         "wolfssl/wolfcrypt/src/port/Espressif/esp_sdk_time_lib.c"
         "wolfssl/wolfcrypt/src/port/Espressif/esp_sdk_wifi_lib.c"
 
+        "wolfssl/wolfcrypt/test/test.c"
+        "wolfssl/wolfcrypt/benchmark/benchmark.c"
+
     INCLUDE_DIRS
         "${CMAKE_CURRENT_LIST_DIR}/port"
         "${CMAKE_CURRENT_SOURCE_DIR}"

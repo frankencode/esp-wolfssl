@@ -874,6 +874,10 @@ Turn on timer debugging (used when CPU cycles not available)
   */
 #define NO_WOLFSSL_ESP32_CRYPT_HASH
 
+/** Use reduced benchmark / test sizes
+  */
+#define BENCH_EMBEDDED
+
 /** Compile-fix
   */
 #if !defined(SINGLE_THREADED)

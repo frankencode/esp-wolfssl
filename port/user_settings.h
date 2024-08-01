@@ -837,11 +837,12 @@ Turn on timer debugging (used when CPU cycles not available)
     #define HAVE_ALPN
 #endif
 
-/** Optionally enable OCSPv1
+/** Optionally enable OCSP
   */
 #ifdef CONFIG_WOLFSSL_HAVE_OCSP
     #define HAVE_OCSP
     #define HAVE_CERTIFICATE_STATUS_REQUEST
+    #define HAVE_CERTIFICATE_STATUS_REQUEST_V2
     #include <sys/socket.h>
     #include <netdb.h>
 #endif

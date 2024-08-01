@@ -20,6 +20,7 @@ menu "wolfSSL"
             indicate support for OCSP when connecting as a TLS client. Server that support OCSP will forward the
             certificate's revocation status to the client and the client will automatically verify the servers certificate
             status based on the OCSP response forwarded to it.
-            Note: This option enables the OCSP in stapling (v1) mode for the client hence the TLS server needs to support OCSP stapling v1 .
+            Note: This option enables mandatory OCSP certificate status checking using OCSP stapling version 1 or 2.
+            The TLS server the client is connecting to must support either of the two TLS extensions.
 
 endmenu # wolfSSL

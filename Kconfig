@@ -23,4 +23,11 @@ menu "wolfSSL"
             Note: This option enables mandatory OCSP certificate status checking using OCSP stapling version 1 or 2.
             The TLS server the client is connecting to must support either of the two TLS extensions.
 
+    config WOLFSSL_DEBUGGING
+        bool "Enable wolfSSL debugging"
+        default n
+        help
+            Enable wolfSSL debugging. Once debugging is enabled sections of code between wolfSSL_Debugging_ON() and
+            wolfSSL_Debugging_OFF() will generate detailed debug messages.
+
 endmenu # wolfSSL

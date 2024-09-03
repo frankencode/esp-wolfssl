@@ -150,3 +150,7 @@ idf_component_register(
 )
 
 target_compile_definitions(${COMPONENT_LIB} PUBLIC WOLFSSL_USER_SETTINGS)
+
+if(CONFIG_WOLFSSL_DEBUGGING)
+    target_compile_definitions(${COMPONENT_LIB} PUBLIC DEBUG_WOLFSSL)
+endif()

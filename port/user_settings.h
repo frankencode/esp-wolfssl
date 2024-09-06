@@ -284,7 +284,10 @@
 /* #define NO_OLD_TLS */
 
 /* TLS 1.3                                 */
-// #define WOLFSSL_TLS13
+#ifdef CONFIG_WOLFSSL_HAVE_TLS_13
+#define WOLFSSL_TLS13
+#endif
+
 #define HAVE_TLS_EXTENSIONS
 #define WC_RSA_PSS
 #define HAVE_HKDF
@@ -842,7 +845,9 @@ Turn on timer debugging (used when CPU cycles not available)
 #ifdef CONFIG_WOLFSSL_HAVE_OCSP
     #define HAVE_OCSP
     #define HAVE_CERTIFICATE_STATUS_REQUEST
-    #define HAVE_CERTIFICATE_STATUS_REQUEST_V2
+    #ifndef CONFIG_WOLFSSL_HAVE_TLS_13
+        #define HAVE_CERTIFICATE_STATUS_REQUEST_V2
+    #endif
     #include <sys/socket.h>
     #include <netdb.h>
 #endif

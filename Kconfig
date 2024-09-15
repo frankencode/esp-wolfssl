@@ -29,11 +29,30 @@ menu "wolfSSL"
         help
             Enable support for TLS version 1.3 in wolfSSL.
 
+    config WOLFSSL_HAVE_RSA
+        bool "Enable RSA in wolfSSL"
+        default "y"
+        help
+            Enables support for key exchange algorithms based on RSA.
+
     config WOLFSSL_DEBUGGING
         bool "Enable wolfSSL debugging"
         default n
         help
             Enable wolfSSL debugging. Once debugging is enabled sections of code between wolfSSL_Debugging_ON() and
             wolfSSL_Debugging_OFF() will generate detailed debug messages.
+
+    config CONFIG_WOLFSSL_HAVE_CRYPT_BENCHMARK
+        bool "Enable wolfSSL benchmark module"
+        default n
+        help
+            Enable wolfSSL cryptography benchmark.
+
+    config CONFIG_WOLFSSL_HAVE_CRYPT_TEST
+        bool "Enable wolfSSL test mobule"
+        default n
+        help
+            Enable wolfSSL cryptography benchmark.
+
 
 endmenu # wolfSSL

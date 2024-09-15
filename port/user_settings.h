@@ -141,11 +141,7 @@
 
 /* Full debugging turned off, but show malloc failure detail */
 /* #define DEBUG_WOLFSSL */
-#define DEBUG_WOLFSSL_MALLOC
-
-/* See test.c that sets cert buffers; we'll set them here: */
-#define USE_CERT_BUFFERS_256
-#define USE_CERT_BUFFERS_2048
+// #define DEBUG_WOLFSSL_MALLOC
 
 /* RSA_LOW_MEM: Half as much memory but twice as slow. */
 #define RSA_LOW_MEM
@@ -286,6 +282,18 @@
 /* TLS 1.3                                 */
 #ifdef CONFIG_WOLFSSL_HAVE_TLS_13
 #define WOLFSSL_TLS13
+#endif
+
+#ifndef CONFIG_WOLFSSL_HAVE_RSA
+#define NO_RSA
+#endif
+
+#ifndef CONFIG_WOLFSSL_HAVE_CRYPT_TEST
+#define NO_CRYPT_TEST
+#endif
+
+#ifndef CONFIG_WOLFSSL_HAVE_CRYPT_BENCHMARK
+#define NO_CRYPT_BENCHMARK
 #endif
 
 #define HAVE_TLS_EXTENSIONS
@@ -885,9 +893,3 @@ Turn on timer debugging (used when CPU cycles not available)
 /** Use reduced benchmark / test sizes
   */
 #define BENCH_EMBEDDED
-
-/** Compile-fix
-  */
-#if !defined(SINGLE_THREADED)
-    #include <pthread.h>
-#endif

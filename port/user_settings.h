@@ -858,6 +858,10 @@ Turn on timer debugging (used when CPU cycles not available)
     #endif
     #include <sys/socket.h>
     #include <netdb.h>
+#else
+    #if !defined(SINGLE_THREADED)
+        #include <pthread.h>
+    #endif
 #endif
 
 /** Enable PKCS7 certificate parser with BER support

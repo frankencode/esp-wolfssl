@@ -897,3 +897,7 @@ Turn on timer debugging (used when CPU cycles not available)
 /** Use reduced benchmark / test sizes
   */
 #define BENCH_EMBEDDED
+
+#ifdef CONFIG_WOLFSSL_HAVE_ISSUER_NAMES
+#define WOLFSSL_HAVE_ISSUER_NAMES
+#endif

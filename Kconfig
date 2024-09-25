@@ -42,13 +42,19 @@ menu "wolfSSL"
             Enable wolfSSL debugging. Once debugging is enabled sections of code between wolfSSL_Debugging_ON() and
             wolfSSL_Debugging_OFF() will generate detailed debug messages.
 
-    config CONFIG_WOLFSSL_HAVE_CRYPT_BENCHMARK
+    config WOLFSSL_HAVE_ISSUER_NAMES
+        bool "Enable issuer name in DecodedCert structure"
+        default n
+        help
+            Enable wolfSSL to include the issuer names in the DecodedCert structure.
+
+    config WOLFSSL_HAVE_CRYPT_BENCHMARK
         bool "Enable wolfSSL benchmark module"
         default n
         help
             Enable wolfSSL cryptography benchmark.
 
-    config CONFIG_WOLFSSL_HAVE_CRYPT_TEST
+    config WOLFSSL_HAVE_CRYPT_TEST
         bool "Enable wolfSSL test mobule"
         default n
         help

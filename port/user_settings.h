@@ -141,7 +141,7 @@
 
 /* Full debugging turned off, but show malloc failure detail */
 /* #define DEBUG_WOLFSSL */
-// #define DEBUG_WOLFSSL_MALLOC
+#define DEBUG_WOLFSSL_MALLOC
 
 /* RSA_LOW_MEM: Half as much memory but twice as slow. */
 #define RSA_LOW_MEM

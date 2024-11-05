@@ -35,18 +35,25 @@ menu "wolfSSL"
         help
             Enables support for key exchange algorithms based on RSA.
 
-    config WOLFSSL_DEBUGGING
-        bool "Enable wolfSSL debugging"
-        default n
+    config WOLFSSL_HAVE_SYSTEM_TIME
+        bool "Check certificate validity time"
+        default y
         help
-            Enable wolfSSL debugging. Once debugging is enabled sections of code between wolfSSL_Debugging_ON() and
-            wolfSSL_Debugging_OFF() will generate detailed debug messages.
+            Enable certificate validity checks based on current system time.
+            This is also needed for the generation of certificates.
 
     config WOLFSSL_HAVE_ISSUER_NAMES
         bool "Enable issuer name in DecodedCert structure"
         default n
         help
             Enable wolfSSL to include the issuer names in the DecodedCert structure.
+
+    config WOLFSSL_DEBUGGING
+        bool "Enable wolfSSL debugging"
+        default n
+        help
+            Enable wolfSSL debugging. Once debugging is enabled sections of code between wolfSSL_Debugging_ON() and
+            wolfSSL_Debugging_OFF() will generate detailed debug messages.
 
     config WOLFSSL_HAVE_CRYPT_BENCHMARK
         bool "Enable wolfSSL benchmark module"
@@ -59,6 +66,5 @@ menu "wolfSSL"
         default n
         help
             Enable wolfSSL cryptography benchmark.
-
 
 endmenu # wolfSSL

@@ -375,11 +375,10 @@
 
 /* #define WOLFSSL_ATECC508A_DEBUG         */
 
-/* date/time                               */
-/* if it cannot adjust time in the device, */
-/* enable macro below                      */
+#ifndef CONFIG_WOLFSSL_HAVE_SYSTEM_TIME
 #define NO_ASN_TIME
 // #define XTIME time
+#endif
 
 
 /* adjust wait-timeout count if you see timeout in RSA HW acceleration */
@@ -901,3 +900,9 @@ Turn on timer debugging (used when CPU cycles not available)
 #ifdef CONFIG_WOLFSSL_HAVE_ISSUER_NAMES
 #define WOLFSSL_HAVE_ISSUER_NAMES
 #endif
+
+/** Add support for custom OID extensions for certificate generation
+  */
+#define WOLFSSL_MULTI_ATTRIB
+#define WOLFSSL_CUSTOM_OID
+#define HAVE_OID_ENCODING

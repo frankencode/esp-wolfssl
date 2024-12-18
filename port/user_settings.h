@@ -863,18 +863,6 @@ Turn on timer debugging (used when CPU cycles not available)
     #endif
 #endif
 
-/** Enable PKCS7 certificate parser with BER support
-  */
-#define HAVE_PKCS7
-#if defined(HAVE_PKCS7)
-    #define HAVE_AES_KEYWRAP
-    #define HAVE_X963_KDF
-    #define WOLFSSL_AES_DIRECT
-    #define WOLFSSL_ASN_TEMPLATE
-    #define NO_PKCS7_STREAM
-    #define ASN_BER_TO_DER
-#endif
-
 /** Only requires the peer certificate to validate to a trusted certificate.
   * If peer sends additional certificates not in the chain they are allowed,
   * but not trusted

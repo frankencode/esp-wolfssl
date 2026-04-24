@@ -894,3 +894,15 @@ Turn on timer debugging (used when CPU cycles not available)
 #define WOLFSSL_MULTI_ATTRIB
 #define WOLFSSL_CUSTOM_OID
 #define HAVE_OID_ENCODING
+
+/** Disable curve types as workaround for CVE-2026-5194
+  */
+#ifdef HAVE_ED25519
+#undef HAVE_ED25519
+#endif
+#ifdef HAVE_ED448
+#undef HAVE_ED448
+#endif
+#ifdef HAVE_DILITHIUM
+#undef HAVE_DILITHIUM
+#endif
